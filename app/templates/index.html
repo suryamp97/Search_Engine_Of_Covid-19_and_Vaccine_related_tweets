@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  form,p{
+text-align: center;
+  }
+ 
+</style>
+</head>
+<body>
+
+<img src="/static/twitter.jpeg" width="300" height="168.75">
+
+<form action="{{ url_for("tweet_ret")}}" method="post">
+
+
+  
+  <input type="text" id="search" name="search" value="Type your Keyword..."><br>
+
+  
+  <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  form,p{
+text-align: center;
+  }
+ table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+</head>
+<body>
+
+<img src="/static/twitter.jpeg" width="300" height="168.75">
+
+<form action="{{ url_for("tweet_ret")}}" method="post">
+
+
+  
+  <input type="text" id="search" name="search" value="Type your Keyword..."><br>
+
+  
+  <input type="submit" value="Submit">
+
+</form>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>tweet_text</th>
+    <th>polarity</th>
+    <th>Sentiment</th>
+    <th>top positive reply</th>
+    <th>top negative reply</th>
+  </tr>
+  
+{% for item in data %}
+        <tr><td>{{item.tw_id}}:</td><td>{{ item.tweet_text}}</td><td>{{ item.tweet_senti_val}}</td><td>{{ item.tweet_senti}}</td><td>{{ item.pos_reply}}</td><td>{{ item.neg_reply}}</td></tr>
+       {% endfor %}
+  
+
+</table>
+
+</body>
+</html>
