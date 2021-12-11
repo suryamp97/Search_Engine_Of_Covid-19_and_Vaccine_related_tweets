@@ -1,0 +1,148 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 2px -2px #d1d1d1;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.topnav .search-container {
+  background: #f0eff3;
+  border: 2px solid #f0eff3;
+  border-radius: 8px;
+  display: table;
+  margin: 0 auto;
+  box-shadow: 0 2px 2px 1px  #d1d1d1;
+  width: 50%;
+}
+
+.topnav .dropdown-container {
+  display: table;
+  margin: 0 auto;
+}
+
+.topnav .dropdown-container form {
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 16px;
+}
+
+.topnav .dropdown-container select {
+  background: #f0eff3;
+  border: 2px solid #f0eff3;
+  border-radius: 8px;
+  font-size: 17px;
+  padding: 5px;
+  box-shadow: 0 2px 2px 1px  #d1d1d1;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  font-size: 17px;
+  border: none;
+  background: #f0eff3;
+  outline: none;
+  margin-top: 2px;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  background: #f0eff3;
+  font-size: 17px;
+  border: 2px solid #f0eff3;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+.row {
+  display: table;
+  margin: 0 auto;
+  width: 50%;
+  float: left;
+  margin-left: 16px;
+  border-right: 1px solid #e2e2e2;
+}
+
+.column {
+  display: block;
+  padding: 10px;
+  border-bottom:1px solid #e2e2e2;
+  margin-right: 16px;
+}
+
+.row .column p {
+  display: inline;
+  margin-top: 25px;
+}
+
+.row .column img {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+}
+
+
+</style>
+</head>
+<body>
+
+<!--<img src="/static/twitter.jpeg" width="300" height="168.75"> -->
+
+<div class="topnav">
+
+  <div class="search-container">
+  <form action="{{ url_for("tweet_ret")}}" method="post">
+  <div class="search-container">
+      <input type="text" placeholder="Search..." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+  </div>
+  <br>
+  <div class="dropdown-container">
+      <select name="poi" id="poi"  >
+      <option value="n">-- No filter --</option>
+      <option value="narendramodi">Narendra Modi</option>
+      <option value="biden">Joe Biden</option>
+      <option value="cdc">CDC</option>
+      <option value="ted">Ted Cruz</option>
+      </select>
+    
+      <select name="country" id="country">
+      <option value="nn">-- No filter --</option>
+      <option value="usa">USA</option>
+      <option value="india">India</option>
+      <option value="mexico">Mexico</option>
+      </select>
+    
+      <select name="lang" id="lang">
+      <option value="nnn">-- No filter --</option>
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="es">Spanish</option>
+      </select>
+
+  </div>
+</form>
+  </div>
+</div>
+
+</body>
+</html>
